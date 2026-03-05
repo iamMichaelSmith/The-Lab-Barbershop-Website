@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or "The Lab Barbershop | Best Fades in Manor, TX" }}</title>
+    <meta name="description" content="{{ description or "The Lab Barbershop in Manor, TX — precision fades, sharp tapers, and master grooming. Book your transformation today. 201 E Parsons St, Manor TX 78653." }}">
+    <meta name="theme-color" content="#0047AB">
+    <link rel="canonical" href="https://thelabbarbershop.com{{ page.url }}">
+
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="/assets/images/shop-hero.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/images/favicon.svg">
+
+    <!-- Compiled Tailwind + custom styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thelabbarbershop.com{{ page.url }}">
+    <meta property="og:title" content="{{ title or 'The Lab Barbershop | Manor, TX' }}">
+    <meta property="og:description" content="{{ description or 'Precision grooming in Manor, TX. Book your fade today.' }}">
+    <meta property="og:image" content="https://thelabbarbershop.com/assets/images/shop-hero.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title or 'The Lab Barbershop | Manor, TX' }}">
+    <meta name="twitter:description" content="{{ description or 'Precision grooming in Manor, TX.' }}">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BarberShop",
+      "name": "The Lab Barbershop",
+      "image": "https://thelabbarbershop.com/assets/images/shop-hero.png",
+      "url": "https://thelabbarbershop.com/",
+      "telephone": "+15123053335",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "201 E Parsons St",
+        "addressLocality": "Manor",
+        "addressRegion": "TX",
+        "postalCode": "78653",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.3414,
+        "longitude": -97.5561
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Barbershop Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Signature Fade", "description": "Precision fade customized to your profile" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Beard Sculpting", "description": "Technical beard grooming and line-ups" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Full Lab Process", "description": "Complete hair and beard transformation" } }
+        ]
+      },
+      "sameAs": [
+        "https://www.instagram.com/the_lab_manor/"
+      ]
+    }
+    </script>
+</head>
+<body class="bg-lab-black text-lab-white font-outfit">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-lg border-b border-white/5">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold tracking-tighter uppercase flex items-center gap-2">
+                <span class="w-8 h-8 rounded-full border-2 border-lab-blue flex items-center justify-center text-xs">🧪</span>
+                The Lab<span class="text-lab-blue">.</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-widest">
+                <a href="/" class="hover:text-lab-blue transition">Home</a>
+                <a href="/#services" class="hover:text-lab-blue transition">Services</a>
+                <a href="/blogs" class="hover:text-lab-blue transition">Lab Log</a>
+            </div>
+
+            <!-- Desktop CTA -->
+            <a href="https://app.thecut.co/barbers/thelab" class="hidden md:inline-block bg-lab-blue text-white px-8 py-2.5 rounded-sm font-bold hover:bg-lab-red transition-all uppercase text-sm tracking-wider">Book Online</a>
+
+            <!-- Mobile Hamburger -->
+            <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2 z-60" aria-label="Open Menu">
+                <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar1"></span>
+                <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
+                <span class="block w-4 h-0.5 bg-lab-blue transition-all duration-300" id="bar3"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div id="mobile-nav" class="fixed inset-0 z-40 bg-black/98 flex flex-col items-center justify-center gap-10 opacity-0 pointer-events-none transition-all duration-500">
+        <a href="/" class="text-4xl font-extrabold uppercase tracking-tight hover:text-lab-blue transition" data-close-mobile-nav>Home</a>
+        <a href="/#services" class="text-4xl font-extrabold uppercase tracking-tight hover:text-lab-blue transition" data-close-mobile-nav>Services</a>
+        <a href="/blogs" class="text-4xl font-extrabold uppercase tracking-tight hover:text-lab-blue transition" data-close-mobile-nav>Lab Log</a>
+        <div class="mt-6 flex flex-col gap-4 items-center">
+            <a href="https://app.thecut.co/barbers/thelab" class="bg-lab-blue text-white px-12 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-lab-red transition-all text-lg">Book Online</a>
+            <a href="tel:5123053335" class="text-zinc-400 font-bold tracking-widest text-sm uppercase">Call: 512.305.3335</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        {{ content | safe }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-3 gap-12 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">The Lab Barbershop</h3>
+                    <p class="text-zinc-500 leading-relaxed mb-6">Precision grooming for the modern gentleman. Where science meets style in Manor, Texas.</p>
+                    <a href="https://www.instagram.com/the_lab_manor/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-lab-blue hover:text-white transition font-bold text-sm uppercase tracking-widest">
+                        📸 @the_lab_manor
+                    </a>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-lab-blue uppercase tracking-widest text-sm">Contact</h4>
+                    <p class="text-zinc-400 mb-2">
+                        <a href="tel:5123053335" class="hover:text-white transition font-semibold">📞 512.305.3335</a>
+                    </p>
+                    <p class="text-zinc-500 mb-4">
+                        <a href="https://maps.google.com/?q=201+E+Parsons+St+Manor+TX+78653" target="_blank" rel="noopener" class="hover:text-white transition">
+                            📍 201 E Parsons St<br>Manor, TX 78653
+                        </a>
+                    </p>
+                    <a href="https://app.thecut.co/barbers/thelab" class="inline-block mt-2 bg-lab-blue/10 border border-lab-blue/30 text-lab-blue px-6 py-2 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-lab-blue hover:text-white transition">Book Online</a>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-lab-blue uppercase tracking-widest text-sm">Hours</h4>
+                    <div class="text-zinc-400 space-y-1 text-sm">
+                        <p>Mon – Sat: <span class="text-white font-semibold">10am – 8pm</span></p>
+                        <p>Sun: <span class="text-zinc-600">Closed</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/5 text-center text-zinc-700 text-xs uppercase tracking-widest">
+                &copy; 2026 The Lab Barbershop. All rights reserved. | Manor, TX
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <a href="https://app.thecut.co/barbers/thelab" class="md:hidden fixed bottom-6 right-6 z-50 bg-lab-blue text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-lab-blue/30 hover:bg-lab-red transition-all uppercase text-sm tracking-wider animate-fade-in" id="floating-cta">
+        ✂️ Book Now
+    </a>
+    <a href="https://app.thecut.co/barbers/thelab" class="hidden md:inline-flex fixed bottom-6 right-6 z-50 bg-lab-blue text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-lab-blue/30 hover:bg-lab-red transition-all uppercase text-sm tracking-wider" id="floating-cta-desktop">
+        Book Now
+    </a>
+
+    <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="pt-40 pb-24 bg-black">
+    <div class="max-w-3xl mx-auto px-6">
+        <header class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-lab-blue font-bold tracking-[0.3em] uppercase text-xs border-b-2 border-lab-blue pb-2">{{ date | postDate }}</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-none tracking-tighter">{{ title }}</h1>
+            <p class="text-xl text-zinc-500 font-normal leading-relaxed italic">{{ description }}</p>
+            <div class="mt-10 flex items-center gap-5 p-6 glass border-l-4 border-lab-red rounded-sm">
+                <div class="w-14 h-14 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center text-2xl">🧪</div>
+                <div>
+                    <span class="block font-bold uppercase tracking-widest text-sm text-lab-white">{{ author or "The Lab" }}</span>
+                    <span class="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mt-1">The Lab Barbershop &bull; Manor, TX</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="prose prose-invert prose-blue max-w-none text-zinc-400 leading-relaxed text-lg space-y-6">
+            {{ content | safe }}
+        </div>
+
+        <div class="mt-20 pt-16 border-t border-white/5">
+            <h3 class="text-3xl font-extrabold mb-8 tracking-tight uppercase">Ready for Your Transformation?</h3>
+            <div class="glass p-10 md:p-12 rounded-sm flex flex-col md:flex-row items-center justify-between gap-8 border-l-4 border-lab-blue">
+                <p class="text-zinc-400 text-lg max-w-lg">Our barbers in Manor are ready to give you the sharpest cut you've ever had. Book online or walk in.</p>
+                <a href="https://app.thecut.co/barbers/thelab" class="w-full md:w-auto text-center bg-lab-blue text-white px-10 py-4 rounded-sm font-bold hover:bg-lab-red transition-all uppercase tracking-widest text-sm">Book Now</a>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ title }}",
+    "description": "{{ description }}",
+    "author": {
+        "@type": "Organization",
+        "name": "The Lab Barbershop"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "The Lab Barbershop",
+        "url": "https://thelabbarbershop.com/"
+    },
+    "datePublished": "{{ date | postDate }}",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://thelabbarbershop.com{{ page.url }}"
+    }
+}
+</script>
+
