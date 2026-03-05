@@ -1,2 +1,8 @@
 date,message_id,from,subject,intent,urgency,service_fit,recommended_next_action,status
 2026-03-05 10:24:37,423,contact@blakmarigold.com,TEST HOT LEAD need mixing this week,hot,high,mixing,Reply within 15m with mixing availability + phone CTA,new
+2026-03-05 11:00:47,424,Mail Delivery Subsystem <mailer-daemon@googlemail.com>,Delivery Status Notification (Failure),hot,high,general,Reply within 15m with general availability + phone CTA,new
+2026-03-05 11:51:07,reddit:2762107513234227234,reddit/forhire,"Search: ""need mixing"" OR ""need mastering"" in r/forhire (last day)",warm,medium,mastering,"Open thread search, find live poster, send value-first mastering offer",new
+2026-03-05 11:51:07,reddit:4809937124637167452,reddit/makinghiphop,"Search: ""looking for mixing engineer"" in r/makinghiphop (last month)",warm,medium,mixing,"Open thread search, find live poster, send value-first mixing offer",new
+2026-03-05 11:51:07,reddit:9215961678966775519,reddit/WeAreTheMusicMakers,"Search: ""looking for mixing engineer"" in r/WeAreTheMusicMakers (last month)",warm,medium,mixing,"Open thread search, find live poster, send value-first mixing offer",new
+2026-03-05 11:51:07,reddit:3383587308878727253,reddit/hiphopheads,"Search: ""hiring audio engineer"" OR ""paid mix"" in r/hiphopheads (last month)",nurture,low,mixing,"Open thread search, find live poster, send value-first mixing offer",new
+2026-03-05 11:51:07,reddit:7809463054004900330,reddit/trapproduction,"Search: ""need mixing"" in r/trapproduction (last month)",nurture,low,mixing,"Open thread search, find live poster, send value-first mixing offer",new
