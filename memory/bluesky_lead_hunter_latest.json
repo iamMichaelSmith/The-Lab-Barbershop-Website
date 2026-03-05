@@ -1,0 +1,14 @@
+{
+  "date": "2026-03-05",
+  "checked": 0,
+  "kept": 0,
+  "A": 0,
+  "B": 0,
+  "C": 0,
+  "queued_AB": 0,
+  "top_query": "none",
+  "mode": "expanded",
+  "blockers": [
+    "not_logged_in"
+  ]
+}

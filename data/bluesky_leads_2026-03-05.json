@@ -1,0 +1,20 @@
+{
+  "date": "2026-03-05",
+  "checked": 0,
+  "kept": 0,
+  "blockers": [
+    "producer beats:cli_unavailable",
+    "new song out:cli_unavailable",
+    "EP out now:cli_unavailable",
+    "album out now:cli_unavailable",
+    "mix feedback:cli_unavailable",
+    "ATX artist:cli_unavailable",
+    "Austin musician:cli_unavailable",
+    "austin new single:cli_unavailable",
+    "need mixing engineer:cli_unavailable",
+    "need mastering:cli_unavailable",
+    "just recorded this:cli_unavailable",
+    "studio session:cli_unavailable"
+  ],
+  "leads": []
+}
