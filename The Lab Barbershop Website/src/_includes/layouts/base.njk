@@ -108,7 +108,7 @@
             <a href="https://app.thecut.co/barbers/thelab" class="hidden md:inline-block bg-lab-blue text-white px-8 py-2.5 rounded-sm font-bold hover:bg-lab-red transition-all uppercase text-sm tracking-wider">Book Online</a>
 
             <!-- Mobile Hamburger -->
-            <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2 z-60" aria-label="Open Menu">
+            <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2 z-[80]" aria-label="Open Menu">
                 <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar1"></span>
                 <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
                 <span class="block w-4 h-0.5 bg-lab-blue transition-all duration-300" id="bar3"></span>
@@ -117,13 +117,13 @@
     </header>
 
     <!-- Mobile Nav Overlay -->
-    <div id="mobile-nav" class="fixed inset-0 z-40 bg-black/98 flex flex-col items-center justify-center gap-10 opacity-0 pointer-events-none transition-all duration-500">
-        <a href="/" class="text-4xl font-extrabold uppercase tracking-tight hover:text-lab-blue transition" data-close-mobile-nav>Home</a>
-        <a href="/#services" class="text-4xl font-extrabold uppercase tracking-tight hover:text-lab-blue transition" data-close-mobile-nav>Services</a>
-        <a href="/blogs" class="text-4xl font-extrabold uppercase tracking-tight hover:text-lab-blue transition" data-close-mobile-nav>Lab Log</a>
-        <div class="mt-6 flex flex-col gap-4 items-center">
-            <a href="https://app.thecut.co/barbers/thelab" class="bg-lab-blue text-white px-12 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-lab-red transition-all text-lg">Book Online</a>
-            <a href="tel:5123053335" class="text-zinc-400 font-bold tracking-widest text-sm uppercase">Call: 512.305.3335</a>
+    <div id="mobile-nav" class="fixed inset-0 z-[70] bg-black/95 backdrop-blur-md flex flex-col items-center justify-center gap-6 opacity-0 pointer-events-none transition-all duration-500 px-6">
+        <a href="/" class="w-full max-w-xs text-center text-3xl font-extrabold uppercase tracking-tight hover:text-lab-blue transition bg-zinc-950/95 border border-white/10 rounded-sm py-4" data-close-mobile-nav>Home</a>
+        <a href="/#services" class="w-full max-w-xs text-center text-3xl font-extrabold uppercase tracking-tight hover:text-lab-blue transition bg-zinc-950/95 border border-white/10 rounded-sm py-4" data-close-mobile-nav>Services</a>
+        <a href="/blogs" class="w-full max-w-xs text-center text-3xl font-extrabold uppercase tracking-tight hover:text-lab-blue transition bg-zinc-950/95 border border-white/10 rounded-sm py-4" data-close-mobile-nav>Lab Log</a>
+        <div class="mt-4 flex flex-col gap-4 items-center w-full max-w-xs bg-zinc-950/95 border border-white/10 rounded-sm p-4">
+            <a href="https://app.thecut.co/barbers/thelab" class="w-full text-center bg-lab-blue text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-lab-red transition-all text-base">Book Online</a>
+            <a href="tel:5123053335" class="w-full text-center text-zinc-300 font-bold tracking-widest text-sm uppercase bg-black/40 border border-white/10 rounded-sm py-3">Call: 512.305.3335</a>
         </div>
     </div>
 
