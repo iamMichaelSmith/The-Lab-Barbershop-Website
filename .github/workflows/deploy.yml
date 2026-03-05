@@ -1,0 +1,67 @@
+name: Deploy To S3 And CloudFront
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+env:
+  AWS_REGION: us-east-1
+  S3_BUCKET: thelab-barbershop-309014076408
+  CLOUDFRONT_DISTRIBUTION_ID: E3DCRKZFP39SBF
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure AWS Credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Upload HTML (short cache)
+        run: |
+          aws s3 sync _site/ s3://${S3_BUCKET}/ \
+            --exclude "*" \
+            --include "*.html" \
+            --content-type "text/html" \
+            --cache-control "max-age=300"
+
+      - name: Upload Static Assets
+        run: |
+          aws s3 sync _site/ s3://${S3_BUCKET}/ \
+            --exclude "*.html" \
+            --delete
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" \
+            --paths "/*"
