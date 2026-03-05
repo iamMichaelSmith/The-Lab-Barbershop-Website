@@ -12,6 +12,17 @@ This project is intentionally lightweight, SEO-focused, and designed for modern 
 - Static-first architecture (fast load, low ops overhead)
 - Deployment-ready for AWS static hosting stack
 
+## Screenshots
+
+### Home Page
+![The Lab Barbershop Home](docs/screenshots/home-page.png)
+
+### Booking Page (The Cut)
+![The Lab Barbershop Booking](docs/screenshots/book-page.png)
+
+### Blog / SEO Content Page
+![The Lab Barbershop Blogs](docs/screenshots/blogs-page.png)
+
 ## Tech Stack
 
 - [Eleventy (11ty)](https://www.11ty.dev/) — static site generator
