@@ -1,10 +1,19 @@
 {
   "date": "2026-03-05",
   "status": "ok",
-  "checked": 0,
-  "new": 0,
-  "hot": 0,
+  "checked": 1,
+  "new": 1,
+  "hot": 1,
   "warm": 0,
   "nurture": 0,
+  "hot_leads": [
+    {
+      "message_id": "423",
+      "from": "contact@blakmarigold.com",
+      "subject": "TEST HOT LEAD need mixing this week",
+      "service_fit": "mixing",
+      "next_action": "Reply within 15m with mixing availability + phone CTA"
+    }
+  ],
   "queue_file": "C:\\Users\\User\\Documents\\Openclaw\\data\\booking_intent_queue.csv"
 }

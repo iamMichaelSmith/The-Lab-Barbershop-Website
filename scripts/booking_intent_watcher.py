@@ -206,6 +206,19 @@ def main():
 
     save_seen_ids(seen_ids)
 
+    # collect top hot leads from this run for optional immediate alerts
+    hot_leads = []
+    if rows_to_add:
+        for row in rows_to_add:
+            if row[4] == "hot":
+                hot_leads.append({
+                    "message_id": row[1],
+                    "from": row[2],
+                    "subject": row[3],
+                    "service_fit": row[6],
+                    "next_action": row[7],
+                })
+
     latest = {
         "date": datetime.now().strftime("%Y-%m-%d"),
         "status": "ok",
@@ -214,6 +227,7 @@ def main():
         "hot": hot,
         "warm": warm,
         "nurture": nurture,
+        "hot_leads": hot_leads[:5],
         "queue_file": str(QUEUE_PATH),
     }
     LATEST_PATH.write_text(json.dumps(latest, indent=2), encoding="utf-8")
